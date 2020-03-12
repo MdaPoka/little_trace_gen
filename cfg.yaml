@@ -1,0 +1,42 @@
+---
+columns : [timestamp, tp, opCode, result, volumeId, objId, objLba, length, timepoint, last_time_nano]
+# columns : [type, len, offset]
+pattern : "|{:<26}|{:<15}|{:<12}|{:<6}|{:<18}|{:<18}|{:<16}|{:<6}|{:<10}|{:<19}|"
+# pattern : "|{:5}|{:3}|{:9}|"
+max_reqs : 11200
+max_objLba : 1100000000
+output : "help.txt"
+---
+host_id : 1
+host_prob : 0.3
+new_offset_prob : [0.5, 0.5]
+mem_split : [0.8, 0.2]
+mem_prob : [0.5, 0.5]
+rw_prob : [0.5, 0.5]
+req_len : [10, 20, 30]
+req_len_prob : [0.25, 0.25, 0.5]
+req_wait : [1, 5, 10, 25]
+req_wait_prob : [0.25, 0.25, 0.25, 0.25]
+---
+host_id : 2
+host_prob : 0.5
+new_offset_prob : [0.99, 0.01]
+mem_split : [0.8, 0.2]
+mem_prob : [0.5, 0.5]
+rw_prob : [0.5, 0.5]
+req_len : [10, 20, 30]
+req_len_prob : [0.25, 0.25, 0.5]
+req_wait : [1, 13, 17, 21]
+req_wait_prob : [0.25, 0.25, 0.25, 0.25]
+---
+host_id : 3
+host_prob : 0.2
+new_offset_prob : [0.99, 0.01]
+mem_split : [0.8, 0.2]
+mem_prob : [0.5, 0.5]
+rw_prob : [0.5, 0.5]
+req_len : [10, 20, 30]
+req_len_prob : [0.25, 0.25, 0.5]
+req_wait : [1, 13, 17, 21]
+req_wait_prob : [0.25, 0.25, 0.25, 0.25]
+...
